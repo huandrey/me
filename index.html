@@ -1,142 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huandrey Pontes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e2e8f0;
-        }
-        header {
-            background-color: #312e81;
-            color: #f1f5f9;
-            padding: 20px;
-            text-align: center;
-        }
-        .logo-pic {
-            width: 130px;
-            height: 130px;
-        }
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 20px auto;
-            display: block;
-        }
-        .main-container {
-            max-width: 800px;
-            padding: 20px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 120px;
-        }
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            padding: 20px;
-        }
-        .project {
-            background-color: #1e293b;
-            color: #f1f5f9;
-            padding: 20px;
-            text-align: center;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .project:hover {
-            background-color: #334155;
-            transform: scale(1.05);
-        }
-
-        .project img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #f1f5f9;
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer a {
-            color: #f1f5f9;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://kit.fontawesome.com/2ab6f3cb60.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
-    <header>
-        <img src="assets/logo.png" alt="logo" class="logo-pic"/>
-        <!-- <h1>Huandrey Pontes</h1> -->
-        <!-- <p>[Em construção]</p> -->
-        <!-- Add your utility options here -->
-        <!-- For example: navigation links, contact options, etc. -->
-    </header>
-    
-    <img 
-        style="height:auto;" 
-        src="https://avatars.githubusercontent.com/u/62030386?v=4" 
-        width="260" 
-        height="260" 
-        class="profile-pic"
-        alt="my-photo">
-    
-    <main class="main-container">
-        <div class="projects-grid">
-            <!-- Add your best projects here -->
-            <!-- Each project can be a grid item -->
-            <!-- Example: -->
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-                <p>Description of Project 1</p>
-                <!-- Add project details and links here -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#education">Formação Acadêmica</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Huandrey Pontes</h1>
+            <p>Estudante de graduação em Ciência da Computação @ufcg.</p>
+        </header>
+        <section>
+            <br />
+            <div class="filter">
+              <h2>Projeto Públicos</h2>
+              <div>
+                <label for="languageFilter">Filtrar por Linguagem:</label>
+                <select id="languageFilter" onchange="filterProjects()">
+                    <option value="All">Todas</option>
+                    <!-- Opções de linguagem serão adicionadas dinamicamente -->
+                </select>
             </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h2>Project 2</h2>
-                <p>Description of Project 2</p>
-                <!-- Add project details and links here -->
+          </div>
+            <div id="projects">
+              <!-- Dynamic content from GitHub will be loaded here -->
             </div>
-            <div class="project">
-                <img src="project3.jpg" alt="Project 3">
-                <h2>Project 3</h2>
-                <p>Description of Project 3</p>
-                <!-- Add project details and links here -->
-            </div>
-            <div class="project">
-                <img src="project4.jpg" alt="Project 4">
-                <h2>Project 4</h2>
-                <p>Description of Project 4</p>
-                <!-- Add project details and links here -->
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </main>
-    
-    <footer>
-        <!-- Add your social media links here -->
-        <!-- Example: -->
-        <a href="https://www.linkedin.com/yourprofile">LinkedIn</a>
-        <a href="https://twitter.com/yourhandle">Twitter</a>
-        <!-- Add more social media links as needed -->
-    </footer>
-</body>
+        </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
