@@ -68,3 +68,8 @@ function copyToClipboard(text) {
     alert('Falha ao copiar URL.');
   });
 }
+
+function toggleSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.toggle('open'); // Alterna a classe 'open' para mostrar/esconder a sidebar
+}
