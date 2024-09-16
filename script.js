@@ -33,7 +33,8 @@ function displayProjects(projects) {
         
         ${project.topics.length ? `<div class="topics">Tópicos: ${project.topics.map(topic => `<span class="badge" style="background-color: ${getRandomColor()}">${topic}</span>`).join(' ')}</div>` : ''}
       </div>
-      <button onclick="copyToClipboard('${project.git_url}')">Visitar Projeto</button>
+      
+      <button onclick="copyToClipboard('${project.git_url}')"><a href="${project.html_url}" target="_blank">Visitar Projeto</a></button>
     `;
     projectsContainer.appendChild(projectDiv);
   });
