@@ -30,10 +30,10 @@ function displayProjects(projects) {
           </div>
         ${project.description ? `<p>${project.description}</p>` : ''}
         Linguagem: <span>${project.language ?? 'txt'}</span>
-        
+
         ${project.topics.length ? `<div class="topics">Tópicos: ${project.topics.map(topic => `<span class="badge" style="background-color: ${getRandomColor()}">${topic}</span>`).join(' ')}</div>` : ''}
       </div>
-      
+
       <button onclick="copyToClipboard('${project.git_url}')"><a href="${project.html_url}" target="_blank">Visitar Projeto</a></button>
     `;
     projectsContainer.appendChild(projectDiv);
@@ -70,7 +70,34 @@ function copyToClipboard(text) {
   });
 }
 
-function toggleSidebar() {
+function toggleSidebar(element) {
   const sidebar = document.querySelector('.sidebar');
   sidebar.classList.toggle('open'); // Alterna a classe 'open' para mostrar/esconder a sidebar
+  element.classList.toggle('active');
 }
+
+function closeSidebar() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.remove('open'); // Alte
+}
+
+const folder = document.getElementsByClassName('directory-container')[0];
+const files = document.getElementsByClassName('file-container')[0];
+console.log(folder)
+console.log(files)
+
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    files.classList.add('open');
+  }, 300);
+});
+
+folder.addEventListener('click', () => {
+  if (files.classList.contains('open')) {
+    files.classList.remove('open');
+    files.classList.add('close');
+  } else {
+    files.classList.remove('close');
+    files.classList.add('open');
+  }
+});
