@@ -263,7 +263,12 @@ button:hover {
   }
 
   .main-content {
-    margin-left: 42px;
+    width: 70%;
+    margin-left: 0px;
+  }
+
+  .project {
+    width: 90%;
   }
 
   .hamburger {
